@@ -1,21 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 
-import Home from "./pages/Home";
+import Main from "./components/Main";
 
 function App() {
   return (
-    <Router>
-      <>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-        </Routes>
-      </>
-    </Router>
+    <div className="app">
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
+    </div>
   );
 }
 
