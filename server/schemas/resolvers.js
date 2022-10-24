@@ -1,12 +1,15 @@
-const Listing = require('../models/Listing');
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Listing } = require('../models');
+const { signToken } = require('../utils/auth');
 
 module.exports = {
-    Query: {
-        async listing(_, {ID}) {
-            return await Listing.findById(ID)
+      Query: {
+        listings: async (parent, { username }) => {
+          const params = username ? { username } : {};
+          return Listing.find(params).sort({ createdAt: -1 });
         },
-        async getListings(_, {amount}) {
-            return await Listing.find().sort({ createdAt: -1}).limit(amount)
+        listing: async (parent, { _id }) => {
+          return Listing.findOne({ _id });
         },
         me: async (parent, args, context) => {
             if (context.user) {
@@ -28,28 +31,20 @@ module.exports = {
           },
     },
     Mutation: {
-        async createListing(_,{listingInput: {name, description, price}}) {
-            const createdListing = new Listing({
-                name: name,
-                description: description,
-                price: price,
-                createdAt: new Date().toISOString()
-            });
+        addListing: async (parent, args, context) => {
+          if (context.user) {
+            const listing = await Listing.create({ ...args, username: context.user.username });
 
-            const res = await createdListing.save();
+            await User.findByIdAndUpdate(
+              { _id: context.user._id },
+              { $push: { listings: listing._id } },
+              { new: true }
+            );
 
-            return {
-                id: res.id,
-                ...res._doc
-            }
-        },
-        async deleteListing(_, {ID}) {
-            const wasDeleted = (await Listing.deleteOne({_id: ID})).deletedCount;
-            return wasDeleted;
-        },
-        async editListing(_, {ID, listingInput: {name, description, price}}){
-            const wasEdited = (await Listing.updateOne({ _id: ID }, {name: name, description: description, price: price})).modifiedCount;
-            return wasEdited;
+            return listing;
+          }
+
+          throw new AuthenticationError('You need to be logged in!');
         },
         addUser: async (parent, args) => {
             const user = await User.create(args);
