@@ -1,20 +1,35 @@
-const { ApolloServer } = require('apollo-server');
-const mongoose = require('mongoose');
-
-const MONGODB = "mongodb+srv://nighthawk:nofomo@nofomo.76lpu4l.mongodb.net/?retryWrites=true&w=majority"
+const express = require('express');
+const {ApolloServer} = require('apollo-server-express');
+const path = require('path');
 
 const {typeDefs, resolvers} = require('./schemas');
+const {authMiddleware} = require('./utils/auth');
+const db = require('./config/connection');
 
+const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
-    typeDefs,
-    resolvers
-})
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 
-mongoose.connect(MONGODB, {useNewUrlParser: true})
-    .then(() => {
-        console.log("MongoDB Connection Successful");
-        return server.listen({port: 5000})
+const app = express();
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
+
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
+  server.applyMiddleware({ app });
+
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     })
-    .then((res) => {
-        console.log(`Server running at ${res.url}`)
-    })
+  })
+  };
+  
+  startApolloServer(typeDefs, resolvers);
