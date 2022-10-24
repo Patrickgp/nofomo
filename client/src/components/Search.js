@@ -10,7 +10,6 @@ const Search = ()=>{
             <Card.Title>Product Name</Card.Title>
             <button>Rent Now!</button>
         </Card.Body>
-
       </Card>
     )
 }
