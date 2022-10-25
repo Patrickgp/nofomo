@@ -1,10 +1,7 @@
-
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import './App.css';
-import Search from "./components/Search";
-import Categories from "./components/categories";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-
 
 import Main from "./components/Main";
 
