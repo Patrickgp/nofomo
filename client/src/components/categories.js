@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Categoriesc = ()=>{
+const Categories = ()=>{
     return(
         <div>
         <Card style={{width: '18rem'}}>
@@ -26,6 +26,14 @@ const Categoriesc = ()=>{
             <Card.Link href="#">Kitchen and Grilling</Card.Link>
           </Card.Body>
         </Card>
+
+        <Card style={{width: '18rem'}}>
+          <Card.Body>
+            <Card.Link href="#">Party Supplies</Card.Link>
+          </Card.Body>
+        </Card>
         </div>
     )
 }
+
+export default Categories;

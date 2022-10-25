@@ -1,7 +1,6 @@
 import React from 'react';
 import ElectricBike from "../assets/images"
 
-// adding comment to push to Github again
 const Search = ()=>{
     return(
       <Card style={{width: '18rem'}}>
