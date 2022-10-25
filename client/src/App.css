@@ -12,3 +12,7 @@ body {
   padding: 25px;
   text-align: center;
 }
+
+.review-card {
+  width: 300px;
+}
