@@ -8,7 +8,7 @@ const Reviews = () => {
     <section id="review" className="my-5">
       <div className="container">
         <div className="row">
-          <Card className="bg-light review-card">
+          <Card className="bg-light mt-5" style={{ width: 500 }}>
             <Card.Img src={Quad} alt="Card image" />
             <Card.ImgOverlay>
               <Card.Text>

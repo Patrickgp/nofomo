@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import ElectricBike from "../assets/images";
+import ElectricBike from "../assets/ElectricBike.jpg";
 
 const Search = () => {
   return (
