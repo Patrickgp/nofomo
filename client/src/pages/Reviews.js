@@ -12,6 +12,7 @@ const Reviews = () => {
             <Card.Img src={Quad} alt="Card image" />
             <Card.ImgOverlay>
               <Card.Text>
+                ß
                 <Button
                   style={{ position: "absolute", right: 5, bottom: 5 }}
                   variant="primary"
