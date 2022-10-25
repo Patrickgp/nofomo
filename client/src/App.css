@@ -10,9 +10,13 @@ body {
 
 .nav {
   padding: 25px;
-  text-align: center;
 }
 
 .review-card {
   width: 300px;
+}
+
+.signup {
+  text-decoration: none;
+  color: black;
 }
