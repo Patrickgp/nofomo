@@ -8,6 +8,18 @@ body {
   box-sizing: border-box;
 }
 
+.carousel-control-prev-icon {
+  background-color: #558c8f;
+  padding: 50px 20px;
+  border-radius: 20px;
+}
+
+.carousel-control-next-icon {
+  background-color: #558c8f;
+  padding: 50px 20px;
+  border-radius: 20px;
+}
+
 .nav {
   padding: 25px;
 }
@@ -19,4 +31,10 @@ body {
 .signup {
   text-decoration: none;
   color: black;
+}
+
+.featuredItem {
+  position: absolute;
+  top: 100px;
+  padding: 0 50px 50px 50px;
 }

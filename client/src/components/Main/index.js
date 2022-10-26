@@ -15,6 +15,7 @@ function Main() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/search" element={<Search />} />
