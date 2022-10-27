@@ -44,6 +44,7 @@ const Navigation = () => {
               >
                 Categories
               </NavLink>
+
               <NavLink
                 style={({ isActive }) => ({
                   color: isActive ? "#558C8F" : "black",
@@ -54,20 +55,39 @@ const Navigation = () => {
               >
                 Reviews
               </NavLink>
+
               {Auth.loggedIn() ? (
                 <>
-                  <NavLink className="nav signup" onClick={Auth.logout}>
-                    Logout
+                  <NavLink
+                    style={({ isActive }) => ({
+                      color: isActive ? "#558C8F" : "black",
+                      textDecoration: "none",
+                    })}
+                    to="/dashboard"
+                    className="nav"
+                  >
+                    Dashboard
                   </NavLink>
                 </>
               ) : (
-                <NavLink
-                  className="nav signup"
-                  onClick={() => setShowModal(true)}
-                >
-                  Login/Sign Up
-                </NavLink>
+                <></>
               )}
+              <div className="logout">
+                {Auth.loggedIn() ? (
+                  <>
+                    <NavLink className="nav signup" onClick={Auth.logout}>
+                      Logout
+                    </NavLink>
+                  </>
+                ) : (
+                  <NavLink
+                    className="nav signup"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Login/Sign Up
+                  </NavLink>
+                )}
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>

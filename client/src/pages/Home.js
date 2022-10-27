@@ -33,7 +33,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>
@@ -51,7 +51,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>
@@ -80,7 +80,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>
@@ -98,7 +98,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>
@@ -127,7 +127,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>
@@ -145,7 +145,7 @@ const Home = () => {
                 </Card.Text>
               </Card.ImgOverlay>
               <Card.Body>
-                <Card.Title>{}</Card.Title>
+                <Card.Title>{/*price*/}</Card.Title>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
             </Card>

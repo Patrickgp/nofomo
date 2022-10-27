@@ -43,3 +43,17 @@ body {
   text-align: center;
   padding: 0;
 }
+
+.logout a {
+  color: #558c8f;
+}
+
+.dashboard {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#basic-navbar-nav {
+  background-color: white;
+  border-radius: 25px;
+}
