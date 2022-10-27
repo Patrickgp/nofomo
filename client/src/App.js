@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Main from "./components/Main";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -34,11 +34,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="app">
-        <BrowserRouter>
-          <Main />
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
     </ApolloProvider>
   );
 }

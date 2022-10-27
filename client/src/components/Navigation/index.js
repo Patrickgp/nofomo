@@ -14,7 +14,10 @@ const Navigation = () => {
       <Navbar expand="lg" fixed="top">
         <Container>
           <Navbar.Brand className="brand">
-            <NavLink style={{ textDecoration: "none", color: "black" }} to="/">
+            <NavLink
+              style={{ textDecoration: "none", color: "black" }}
+              to="/home"
+            >
               NO<span style={{ color: "#558C8F" }}>FOMO</span>
             </NavLink>
           </Navbar.Brand>
@@ -26,7 +29,7 @@ const Navigation = () => {
                   color: isActive ? "#558C8F" : "black",
                   textDecoration: "none",
                 })}
-                to="home"
+                to="/home"
                 className="nav"
               >
                 Home
@@ -36,7 +39,7 @@ const Navigation = () => {
                   color: isActive ? "#558C8F" : "black",
                   textDecoration: "none",
                 })}
-                to="categories"
+                to="/categories"
                 className="nav"
               >
                 Categories
@@ -46,7 +49,7 @@ const Navigation = () => {
                   color: isActive ? "#558C8F" : "black",
                   textDecoration: "none",
                 })}
-                to="reviews"
+                to="/reviews"
                 className="nav"
               >
                 Reviews
