@@ -1,5 +1,5 @@
-const { Schema } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const reviewSchema = new Schema(
   {
@@ -25,4 +25,6 @@ const reviewSchema = new Schema(
   }
 );
 
-module.exports = reviewSchema;
+const Review = model("Review", reviewSchema);
+
+module.exports = Review;
