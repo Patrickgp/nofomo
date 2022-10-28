@@ -1,5 +1,7 @@
 * {
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -53,7 +55,23 @@ body {
   text-align: center;
 }
 
-#basic-navbar-nav {
+.myItems a {
+  background-color: #558c8f;
+  padding: 5px 25px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.myItems a:hover {
   background-color: white;
+  padding: 5px 25px;
+  border-radius: 10px;
+  border: #558c8f 2px solid;
+  color: #558c8f;
+  text-decoration: none;
+}
+
+#basic-navbar-nav {
   border-radius: 25px;
 }

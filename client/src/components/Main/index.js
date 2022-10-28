@@ -8,6 +8,7 @@ import Categories from "../../pages/Categories";
 import Reviews from "../../pages/Reviews";
 import Search from "../../pages/Search";
 import Dashboard from "../../pages/Dashboard";
+import ItemUpload from "../../pages/ItemUpload";
 
 function Main() {
   return (
@@ -21,6 +22,7 @@ function Main() {
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/search" element={<Search />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/itemUpload" element={<ItemUpload />} />
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
         </Routes>
       </>

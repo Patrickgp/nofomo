@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar expand="lg" fixed="top">
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand className="brand">
             <NavLink
