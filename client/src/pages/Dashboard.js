@@ -7,6 +7,9 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 import UploadWidget from "../components/UploadWidget";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 
 import Quad from "../assets/quad.webp";
 import Kayak from "../assets/kayak.jpeg";
@@ -19,6 +22,18 @@ const Dashboard = () => {
   if (loading) {
     return <h2>LOADING...</h2>;
   }
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dk05bpck6",
+    },
+  });
+
+  // Instantiate a CloudinaryImage object for the image with the public ID, 'docs/models'.
+  const myImage = cld.image("samples/sheep");
+
+  // Resize to 250 x 250 pixels using the 'fill' crop mode.
+  myImage.resize(fill().width(250).height(250));
 
   return (
     <div className="dashboard">
@@ -42,21 +57,15 @@ const Dashboard = () => {
                 <UploadWidget />
               </div>
 
-              <div className="row">
+              <div className="row d-flex justify-content-center">
                 <h3>My Listings</h3>
 
                 <Card className="bg-light mt-5" style={{ width: 300 }}>
-                  <Card.Img
-                    src={Quad}
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                    }}
-                    alt="Card image"
-                  />
+                  <div>
+                    <AdvancedImage cldImg={myImage} />
+                  </div>
                   <Card.ImgOverlay>
                     <Card.Text>
-                      ß
                       <Button
                         style={{
                           position: "absolute",
