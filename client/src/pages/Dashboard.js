@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
+import UploadWidget from "../components/UploadWidget";
 
 import Quad from "../assets/quad.webp";
 import Kayak from "../assets/kayak.jpeg";
@@ -38,6 +39,7 @@ const Dashboard = () => {
 
               <div className="myItems mb-5">
                 <NavLink to="/itemUpload">Post an Item</NavLink>
+                <UploadWidget />
               </div>
 
               <div className="row">
