@@ -1,7 +1,9 @@
 require("dotenv").config();
 const express = require("express");
+const productsRoute = require("./routes/product");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
+const cors = require("cors");
 
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
@@ -18,6 +20,13 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
+
+app.use("/api/products", productsRoute);
+
+app.get("/products", (req, res) => {
+  res.send(products);
+});
 
 // // Serve up static assets
 // if (process.env.NODE_ENV === "production") {
