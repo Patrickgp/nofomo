@@ -1,13 +1,13 @@
-import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
-import { Button, Stack } from "react-bootstrap";
-import ElectricBike from "../assets/ElectricBike.webp";
-import Kayak from "../assets/kayak.jpeg";
-import Mixer from "../assets/mixer.webp";
-import PatioHeater from "../assets/patioHeater.webp";
-import TableSaw from "../assets/tablesaw.jpeg";
-import Tent from "../assets/tent.webp";
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
+import { Button, Stack } from 'react-bootstrap';
+import ElectricBike from '../assets/ElectricBike.webp';
+import Kayak from '../assets/kayak.jpeg';
+import Mixer from '../assets/mixer.webp';
+import PatioHeater from '../assets/patioHeater.webp';
+import TableSaw from '../assets/tablesaw.jpeg';
+import Tent from '../assets/tent.webp';
 
 const Home = () => {
   return (
@@ -25,10 +25,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
@@ -43,10 +49,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
@@ -72,10 +84,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
@@ -90,10 +108,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
@@ -119,10 +143,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
@@ -137,10 +167,16 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Text>
                   <Button
-                    style={{ position: "absolute", right: 5, bottom: 5 }}
+                    style={{ position: 'absolute', right: 5, bottom: 5 }}
                     variant="primary"
                   >
                     Rent Now
+                  </Button>
+                  <Button
+                    style={{ position: 'absolute', left: 5, bottom: 5 }}
+                    variant="primary"
+                  >
+                    Reviews
                   </Button>
                 </Card.Text>
               </Card.ImgOverlay>
