@@ -1,13 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import productsReducer, { productsFetch } from "./slices/productsSlice";
+import { productsApi } from "./slices/productsApi";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = configureStore({
+  reducer: {
+    products: productsReducer,
+    [productsApi.reducerPath]: productsApi.reducer,
+  },
+  middleware: (getDefaultMiddleWare) =>
+    getDefaultMiddleWare().concat(productsApi.middleware),
+});
+
+store.dispatch(productsFetch());
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

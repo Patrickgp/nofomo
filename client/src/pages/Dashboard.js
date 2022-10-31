@@ -53,7 +53,7 @@ const Dashboard = () => {
               </div>
 
               <div className="myItems mb-5">
-                <NavLink to="/itemUpload">Post an Item</NavLink>
+                <NavLink to="/createProduct">Post an Item</NavLink>
                 <UploadWidget />
               </div>
 
