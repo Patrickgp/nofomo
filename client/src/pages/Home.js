@@ -8,10 +8,16 @@ import Mixer from "../assets/mixer.webp";
 import PatioHeater from "../assets/patioHeater.webp";
 import TableSaw from "../assets/tablesaw.jpeg";
 import Tent from "../assets/tent.webp";
+import { useState } from 'react';
+import StripeContainer from '../components/StripeContainer';
 
 const Home = () => {
+  const [showItem, setShowItem] = useState(false)
   return (
     <>
+     {showItem ? <StripeContainer/> :
+            <>
+    <div>
       <h3 className="featureHeader">Featured Items</h3>
       <Carousel className="bg-dark featuredItem">
         <Carousel.Item>
@@ -20,11 +26,12 @@ const Home = () => {
             className="justify-content-center align-items-center"
             gap={4}
           >
+         
             <Card className="bg-light mt-5" style={{ width: 300 }}>
               <Card.Img src={Tent} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -42,7 +49,7 @@ const Home = () => {
               <Card.Img src={ElectricBike} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -71,7 +78,7 @@ const Home = () => {
               <Card.Img src={Kayak} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -89,7 +96,7 @@ const Home = () => {
               <Card.Img src={Mixer} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -118,7 +125,7 @@ const Home = () => {
               <Card.Img src={PatioHeater} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -136,7 +143,7 @@ const Home = () => {
               <Card.Img src={TableSaw} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Text>
-                  <Button
+                  <Button onClick={() => setShowItem(true)}
                     style={{ position: "absolute", right: 5, bottom: 5 }}
                     variant="primary"
                   >
@@ -152,6 +159,8 @@ const Home = () => {
           </Stack>
         </Carousel.Item>
       </Carousel>
+      </div>
+      </>}
     </>
   );
 };
