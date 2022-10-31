@@ -2,6 +2,15 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 
 const Categories = () => {
+  const [categories] = useState([
+    { name: 'camping', description: 'Tents, camp chairs, coolers' },
+    { name: 'vehicles', description: 'ATVS, RVs, boats, bikes' },
+    { name: 'electronics', description: 'Gaming systems, music equipment, tools' },
+    { name: 'kitchen-grilling', description: 'Grills, smokers, small kitchen appliances' },
+    { name: 'miscellany', description: 'Sporting equipment, party supplies, etc.' },
+  ]);
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -30,7 +39,7 @@ const Categories = () => {
 
       <Card style={{ width: "18rem" }}>
         <Card.Body>
-          <Card.Link href="#">Party Supplies</Card.Link>
+          <Card.Link href="#">Miscellany</Card.Link>
         </Card.Body>
       </Card>
     </div>
