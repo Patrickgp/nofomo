@@ -3,11 +3,8 @@ const express = require("express");
 const productsRoute = require("./routes/product");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-<<<<<<< HEAD
-=======
 const cors = require("cors");
 
->>>>>>> feature/cloudinaryb
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
@@ -34,31 +31,31 @@ app.get("/products", (req, res) => {
   res.send(products);
 });
 
-app.use(cors())
+app.use(cors());
 
 app.post("/payment", cors(), async (req, res) => {
-	let { amount, id } = req.body
-	try {
-		const payment = await stripe.paymentIntents.create({
-			amount,
-			currency: "USD",
-			description: "Rental Company",
-			payment_method: id,
-			confirm: true
-		})
-		console.log("Payment", payment)
-		res.json({
-			message: "Payment successful",
-			success: true
-		})
-	} catch (error) {
-		console.log("Error", error)
-		res.json({
-			message: "Payment failed",
-			success: false
-		})
-	}
-})
+  let { amount, id } = req.body;
+  try {
+    const payment = await stripe.paymentIntents.create({
+      amount,
+      currency: "USD",
+      description: "Rental Company",
+      payment_method: id,
+      confirm: true,
+    });
+    console.log("Payment", payment);
+    res.json({
+      message: "Payment successful",
+      success: true,
+    });
+  } catch (error) {
+    console.log("Error", error);
+    res.json({
+      message: "Payment failed",
+      success: false,
+    });
+  }
+});
 
 // // Serve up static assets
 // if (process.env.NODE_ENV === "production") {
