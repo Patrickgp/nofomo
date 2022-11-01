@@ -18,6 +18,10 @@ const productSchema = new Schema(
       type: Object,
       required: true,
     },
+    username: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { productsCreate } from "../slices/productsSlice";
 
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
+
 const CreateProduct = () => {
+  const { data } = useQuery(QUERY_ME);
+  const userdata = data?.me || {};
   const navigate = useNavigate;
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
@@ -43,6 +48,7 @@ const CreateProduct = () => {
         price,
         description,
         image: productImg,
+        username: userdata.username,
       })
     );
 
@@ -101,14 +107,13 @@ const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    margin-top;
 
     select, input {
         padding: 7px;
         min-height: 30px;
         outline: none;
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1px solid #558c8f;
         margin 0.3rem 0;
 
         &:focus {

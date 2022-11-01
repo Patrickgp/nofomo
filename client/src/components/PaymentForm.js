@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import axios from "axios";
 
 const CARD_OPTIONS = {
@@ -62,7 +61,7 @@ export default function PaymentForm() {
       {!success ? (
         <form className="payForm" onSubmit={handleSubmit}>
           <fieldset className="FormGroup">
-            <div className="FormRow">
+            <div className="FormRow d-flex">
               <CardElement options={CARD_OPTIONS} />
             </div>
           </fieldset>

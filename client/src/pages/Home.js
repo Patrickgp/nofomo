@@ -83,6 +83,9 @@ const Home = () => {
                             <Card.Text className="d-flex text-light">
                               ${product.price} / Daily
                             </Card.Text>
+                            <Card.Text className="d-flex text-light mb-5 text-center">
+                              {product.description}
+                            </Card.Text>
                           </Card.Body>
                         </Card>
                       </div>

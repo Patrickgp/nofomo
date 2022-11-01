@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const { items: productData, status } = useSelector((state) => state.products);
 
-  // const { productData } = useGetAllProductsQuery();
+  // const { productInfo } = useGetAllProductsQuery();
 
   // if data isn't here yet, say so
   if (loading) {
@@ -28,7 +28,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="dashboard">
+    <div className="dashboardMain">
       {Auth.loggedIn() ? (
         <>
           <section className="dashboard">
@@ -50,44 +50,47 @@ const Dashboard = () => {
 
               <div className="row d-flex justify-content-center">
                 <h3>My Listings</h3>
-
                 <div className="listingContainer mt-4">
                   {status === "success" ? (
-                    <div className="test d-flex justify-content-center">
+                    <div className="test d-flex justify-content-center flex-wrap">
                       {productData &&
                         productData?.map((product) => (
-                          <div key={product._id} className="product">
-                            <Card
-                              className="bg-dark text-light mx-3"
-                              style={{ width: 300 }}
-                            >
-                              <Card.Img
-                                src={product.image?.url}
-                                alt={product.title}
-                              />
-                              <Card.ImgOverlay>
-                                <Card.Text>
-                                  <Button
-                                    style={{
-                                      position: "absolute",
-                                      right: 5,
-                                      bottom: 5,
-                                      border: "none",
-                                    }}
-                                    variant="primary"
-                                    className="bg-success"
-                                  >
-                                    Available
-                                  </Button>
-                                </Card.Text>
-                              </Card.ImgOverlay>
-                              <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <Card.Text className="d-flex text-light">
-                                  ${product.price} / Daily
-                                </Card.Text>
-                              </Card.Body>
-                            </Card>
+                          <div key={product.username} className="product">
+                            {product.username === userdata.username ? (
+                              <Card
+                                className="bg-dark text-light mx-3 mt-3"
+                                style={{ width: 300 }}
+                              >
+                                <Card.Img
+                                  src={product.image?.url}
+                                  alt={product.title}
+                                />
+                                <Card.ImgOverlay>
+                                  <Card.Text>
+                                    <Button
+                                      style={{
+                                        position: "absolute",
+                                        right: 5,
+                                        bottom: 5,
+                                        border: "none",
+                                      }}
+                                      variant="primary"
+                                      className="bg-success"
+                                    >
+                                      Available
+                                    </Button>
+                                  </Card.Text>
+                                </Card.ImgOverlay>
+                                <Card.Body>
+                                  <Card.Title>{product.title}</Card.Title>
+                                  <Card.Text className="d-flex text-light">
+                                    ${product.price} / Daily
+                                  </Card.Text>
+                                </Card.Body>
+                              </Card>
+                            ) : (
+                              <div></div>
+                            )}
                           </div>
                         ))}
                     </div>

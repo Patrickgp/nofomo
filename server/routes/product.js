@@ -5,7 +5,7 @@ const router = require("express").Router();
 
 // Create an product post
 router.post("/", async (req, res) => {
-  const { title, description, price, image } = req.body;
+  const { title, description, price, image, username } = req.body;
 
   try {
     if (image) {
@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
           title,
           description,
           price,
+          username,
           image: uploadedResponse,
         });
 
