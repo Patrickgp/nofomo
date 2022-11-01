@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { productsCreate } from "../slices/productsSlice";
 
 const CreateProduct = () => {
+  const navigate = useNavigate;
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
 
@@ -43,6 +45,8 @@ const CreateProduct = () => {
         image: productImg,
       })
     );
+
+    window.location.href = "/dashboard";
   };
 
   return (
