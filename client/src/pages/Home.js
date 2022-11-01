@@ -11,10 +11,16 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import StripeContainer from "../components/StripeContainer";
 
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
+
 const Home = () => {
   const [showItem, setShowItem] = useState(false);
   const { items: productData, status } = useSelector((state) => state.products);
   const [showModal, setShowModal] = useState(false);
+
+  const { data } = useQuery(QUERY_ME);
+  const userdata = data?.me || {};
 
   return (
     <>
@@ -42,25 +48,44 @@ const Home = () => {
                           <Card.ImgOverlay>
                             <Card.Text>
                               {Auth.loggedIn() ? (
-                                <Button
-                                  style={{
-                                    position: "absolute",
-                                    right: 5,
-                                    bottom: 5,
-                                    border: "none",
-                                  }}
-                                  variant="primary"
-                                  className="bg-success"
-                                  onMouseDown={() =>
-                                    localStorage.setItem(
-                                      "price",
-                                      product.price * 100
-                                    )
-                                  }
-                                  onMouseUp={() => setShowItem(true)}
-                                >
-                                  Available
-                                </Button>
+                                <>
+                                  {product.username === userdata.username ? (
+                                    <Button
+                                      style={{
+                                        position: "absolute",
+                                        right: 5,
+                                        bottom: 5,
+                                        border: "none",
+                                        zIndex: 999,
+                                        cursor: "not-allowed",
+                                      }}
+                                      className="text-danger bg-dark"
+                                    >
+                                      Cannot Book
+                                    </Button>
+                                  ) : (
+                                    <></>
+                                  )}
+                                  <Button
+                                    style={{
+                                      position: "absolute",
+                                      right: 5,
+                                      bottom: 5,
+                                      border: "none",
+                                    }}
+                                    variant="primary"
+                                    className="bg-success"
+                                    onMouseDown={() =>
+                                      localStorage.setItem(
+                                        "price",
+                                        product.price * 100
+                                      )
+                                    }
+                                    onMouseUp={() => setShowItem(true)}
+                                  >
+                                    Rent Now
+                                  </Button>
+                                </>
                               ) : (
                                 <Button
                                   style={{
