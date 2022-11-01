@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
@@ -24,6 +25,7 @@ const CARD_OPTIONS = {
 };
 
 export default function PaymentForm() {
+  const savedPrice = localStorage.getItem("price");
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -39,7 +41,7 @@ export default function PaymentForm() {
       try {
         const { id } = paymentMethod;
         const response = await axios.post("http://localhost:3001/payment", {
-          amount: 1000,
+          amount: savedPrice,
           id,
         });
 
@@ -67,8 +69,19 @@ export default function PaymentForm() {
           <button className="payButton">Pay</button>
         </form>
       ) : (
-        <div>
-          <h2>Payment Successful</h2>
+        <div className="homeButtonHome d-flex justify-content-center align-items-center flex-column mt-5">
+          <h2 className="d-flex justify-content-center mt-5">
+            Payment Successful
+          </h2>
+          <Button
+            className="mt-5"
+            style={{
+              width: 300,
+            }}
+            onClick={() => window.location.reload()}
+          >
+            Return to Home
+          </Button>
         </div>
       )}
     </>

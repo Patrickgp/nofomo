@@ -1,7 +1,10 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
-import { Button, Stack } from "react-bootstrap";
+import { Button, Nav, Stack, Modal, Tab } from "react-bootstrap";
+import Auth from "../utils/auth";
+import SignUpForm from "../components/SignupForm";
+import LoginForm from "../components/LoginForm";
 
 import { useSelector } from "react-redux";
 
@@ -11,6 +14,7 @@ import StripeContainer from "../components/StripeContainer";
 const Home = () => {
   const [showItem, setShowItem] = useState(false);
   const { items: productData, status } = useSelector((state) => state.products);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -19,72 +23,124 @@ const Home = () => {
       ) : (
         <>
           <div>
-            <h3 className="featureHeader">Featured Items</h3>
-            <Carousel className="bg-dark featuredItem">
-              <Carousel.Item>
-                <Stack
-                  direction="horizontal"
-                  className="justify-content-center align-items-center"
-                  gap={4}
-                >
-                  <div className="listingContainer mt-4">
-                    {status === "success" ? (
-                      <div className="test d-flex justify-content-center">
-                        {productData &&
-                          productData?.map((product) => (
-                            <div key={product._id} className="product">
-                              <Card
-                                className="bg-dark text-light mx-3"
-                                style={{ width: 300 }}
-                              >
-                                <Card.Img
-                                  src={product.image?.url}
-                                  alt={product.title}
-                                />
-                                <Card.ImgOverlay>
-                                  <Card.Text>
-                                    <Button
-                                      style={{
-                                        position: "absolute",
-                                        right: 5,
-                                        bottom: 5,
-                                        border: "none",
-                                      }}
-                                      variant="primary"
-                                      className="bg-success"
-                                      onClick={() =>
-                                        localStorage.setItem(
-                                          "price",
-                                          product.price * 100
-                                        ) && setShowItem(true)
-                                      }
-                                    >
-                                      Available
-                                    </Button>
-                                  </Card.Text>
-                                </Card.ImgOverlay>
-                                <Card.Body>
-                                  <Card.Title>{product.title}</Card.Title>
-                                  <Card.Text className="d-flex text-light">
-                                    ${product.price} / Daily
-                                  </Card.Text>
-                                </Card.Body>
-                              </Card>
-                            </div>
-                          ))}
+            <h3 className="featureHeader">All Available Items</h3>
+
+            <div className="listingContainer mt-4">
+              {status === "success" ? (
+                <div className="test d-flex justify-content-center flex-wrap mx-5">
+                  {productData &&
+                    productData?.map((product) => (
+                      <div key={product._id} className="product">
+                        <Card
+                          className="bg-dark text-light mx-3 mt-3"
+                          style={{ width: 300 }}
+                        >
+                          <Card.Img
+                            src={product.image?.url}
+                            alt={product.title}
+                          />
+                          <Card.ImgOverlay>
+                            <Card.Text>
+                              {Auth.loggedIn() ? (
+                                <Button
+                                  style={{
+                                    position: "absolute",
+                                    right: 5,
+                                    bottom: 5,
+                                    border: "none",
+                                  }}
+                                  variant="primary"
+                                  className="bg-success"
+                                  onMouseDown={() =>
+                                    localStorage.setItem(
+                                      "price",
+                                      product.price * 100
+                                    )
+                                  }
+                                  onMouseUp={() => setShowItem(true)}
+                                >
+                                  Available
+                                </Button>
+                              ) : (
+                                <Button
+                                  style={{
+                                    position: "absolute",
+                                    left: 10,
+                                    bottom: 10,
+                                    border: "none",
+                                  }}
+                                  variant="primary"
+                                  className="bg-success"
+                                  onClick={() => setShowModal(true)}
+                                >
+                                  Please sign in to access pricing
+                                </Button>
+                              )}
+                            </Card.Text>
+                          </Card.ImgOverlay>
+                          <Card.Body>
+                            <Card.Title>{product.title}</Card.Title>
+                            <Card.Text className="d-flex text-light">
+                              ${product.price} / Daily
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
                       </div>
-                    ) : status === "pending" ? (
-                      <p>Loading...</p>
-                    ) : (
-                      <p>No items found.</p>
-                    )}
-                  </div>
-                </Stack>
-              </Carousel.Item>
-            </Carousel>
+                    ))}
+                </div>
+              ) : status === "pending" ? (
+                <p>Loading...</p>
+              ) : (
+                <p>No items found.</p>
+              )}
+            </div>
           </div>
         </>
       )}
+      <Modal
+        size="lg"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="signup-modal"
+      >
+        {/* tab container to do either signup or login component */}
+        <Tab.Container defaultActiveKey="login">
+          <Modal.Header closeButton>
+            <Modal.Title id="signup-modal">
+              <Nav variant="pills">
+                <Nav.Item>
+                  <Nav.Link
+                    eventKey="login"
+                    style={{ backgroundColor: "#558C8F", marginRight: 10 }}
+                    active={{ color: "#558C8F", backgroundColor: "white" }}
+                  >
+                    Login
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    eventKey="signup"
+                    style={{ backgroundColor: "#558C8F" }}
+                    active={{ color: "#558C8F", backgroundColor: "white" }}
+                  >
+                    Sign Up
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Tab.Content>
+              <Tab.Pane eventKey="login">
+                <LoginForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey="signup">
+                <SignUpForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+            </Tab.Content>
+          </Modal.Body>
+        </Tab.Container>
+      </Modal>
     </>
   );
 };
