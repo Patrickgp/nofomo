@@ -34,7 +34,7 @@ const Navigation = () => {
               >
                 Home
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 style={({ isActive }) => ({
                   color: isActive ? "#558C8F" : "black",
                   textDecoration: "none",
@@ -43,9 +43,9 @@ const Navigation = () => {
                 className="nav"
               >
                 Categories
-              </NavLink>
+              </NavLink> */}
 
-              <NavLink
+              {/* <NavLink
                 style={({ isActive }) => ({
                   color: isActive ? "#558C8F" : "black",
                   textDecoration: "none",
@@ -54,7 +54,7 @@ const Navigation = () => {
                 className="nav"
               >
                 Reviews
-              </NavLink>
+              </NavLink> */}
 
               {Auth.loggedIn() ? (
                 <>
