@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const productsRoute = require("./routes/product");
 const { ApolloServer } = require("apollo-server-express");
+
 const path = require("path");
 
 const { typeDefs, resolvers } = require("./schemas");
