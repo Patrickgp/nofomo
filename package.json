@@ -23,5 +23,8 @@
   "homepage": "https://github.com/Patrickgp/nofomo#readme",
   "dependencies": {
     "concurrently": "^7.5.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
