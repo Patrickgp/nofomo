@@ -1,5 +1,5 @@
 const express = require("express");
-const productsRoute = require("./routes/product");
+const productsRoute = require("./routes/productRoute");
 const { ApolloServer } = require("apollo-server-express");
 
 const path = require("path");
@@ -12,7 +12,7 @@ const cors = require("cors");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
