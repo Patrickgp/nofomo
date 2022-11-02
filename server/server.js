@@ -11,7 +11,7 @@ const db = require("./config/connection");
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
