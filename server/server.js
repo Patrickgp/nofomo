@@ -34,8 +34,6 @@ app.get("/products", (req, res) => {
   res.send(products);
 });
 
-app.use(cors());
-
 app.post("/payment", cors(), async (req, res) => {
   let { amount, id } = req.body;
   try {
