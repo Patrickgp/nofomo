@@ -9,17 +9,9 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Patrickgp/nofomo.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Patrickgp/nofomo/issues"
-  },
-  "homepage": "https://github.com/Patrickgp/nofomo#readme",
   "dependencies": {
     "concurrently": "^7.5.0"
   },
