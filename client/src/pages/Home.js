@@ -35,7 +35,7 @@ const Home = () => {
       ) : (
         <>
           <div>
-            <div className="container-fluid bg-dark py-5 my-5">
+            <div className="container-fluid bg-dark py-5">
               <div className="row">
                 <Carousel>
                   <Carousel.Item>
