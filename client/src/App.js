@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Main from "./components/Main";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
