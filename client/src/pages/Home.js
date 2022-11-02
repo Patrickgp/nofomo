@@ -305,7 +305,7 @@ const Home = () => {
                                   className="bg-success"
                                   onClick={() => setShowModal(true)}
                                 >
-                                  Please sign in to access pricing
+                                  Please sign in to rent item
                                 </Button>
                               )}
                             </Card.Text>
