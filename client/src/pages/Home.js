@@ -1,7 +1,7 @@
 import React from "react";
 // import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
-import { Button, Nav, Stack, Modal, Tab } from "react-bootstrap";
+import { Button, Nav, Stack, Carousel, Modal, Tab } from "react-bootstrap";
 import Auth from "../utils/auth";
 import SignUpForm from "../components/SignupForm";
 import LoginForm from "../components/LoginForm";
@@ -13,6 +13,12 @@ import StripeContainer from "../components/StripeContainer";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+
+import Selfie from "../assets/selfie2.jpeg";
+import Selfie2 from "../assets/selfie3.jpeg";
+import Selfie3 from "../assets/selfie4.jpeg";
+import Selfie4 from "../assets/selfie5.jpeg";
+import Selfie5 from "../assets/selfie6.jpeg";
 
 const Home = () => {
   const [showItem, setShowItem] = useState(false);
@@ -29,6 +35,207 @@ const Home = () => {
       ) : (
         <>
           <div>
+            <div className="container-fluid bg-dark py-5 my-5">
+              <div className="row">
+                <Carousel>
+                  <Carousel.Item>
+                    <Stack
+                      direction="horizontal"
+                      className="justify-content-center align-items-center d-flex"
+                      gap={1}
+                    >
+                      <Card
+                        className="bg-light text-light justify-content-center align-items-center d-flex"
+                        style={{
+                          width: 500,
+                          height: 400,
+                          border: "2px solid black",
+                          opacity: "95%",
+                        }}
+                      >
+                        <p class="card-text text-center text-dark mx-5">
+                          This Smoker is amazing! I wanted to try it out before
+                          buying it and I’m definitely getting one now!
+                        </p>
+                        <img
+                          class="card-img-top mt-3"
+                          style={{
+                            width: 150,
+                            height: 150,
+                            objectFit: "cover",
+                            objectPosition: "10% 20%",
+                            border: "2px solid black",
+                            borderRadius: "200px",
+                          }}
+                          src={Selfie}
+                          alt="Card cap"
+                        />
+                        <p className="text-dark mt-2 text-align-center">
+                          RentingGuy4321
+                        </p>
+                      </Card>
+                    </Stack>
+                  </Carousel.Item>
+
+                  <Carousel.Item>
+                    <Stack
+                      direction="horizontal"
+                      className="justify-content-center align-items-center d-flex"
+                      gap={1}
+                    >
+                      <Card
+                        className="bg-light text-light justify-content-center align-items-center d-flex"
+                        style={{
+                          width: 500,
+                          height: 400,
+                          border: "2px solid black",
+                          opacity: "95%",
+                        }}
+                      >
+                        <p class="card-text text-center text-dark mx-5">
+                          Thanks for renting out your electric bike! We had so
+                          much fun and can’t wait to do it again!!!
+                        </p>
+                        <img
+                          class="card-img-top mt-3"
+                          style={{
+                            width: 150,
+                            height: 150,
+                            objectFit: "cover",
+                            objectPosition: "20%",
+                            border: "2px solid black",
+                            borderRadius: "200px",
+                          }}
+                          src={Selfie2}
+                          alt="Card cap"
+                        />
+                        <p className="text-dark mt-2 text-align-center">
+                          ThatBikeGirl
+                        </p>
+                      </Card>
+                    </Stack>
+                  </Carousel.Item>
+
+                  <Carousel.Item>
+                    <Stack
+                      direction="horizontal"
+                      className="justify-content-center align-items-center d-flex"
+                      gap={1}
+                    >
+                      <Card
+                        className="bg-light text-light justify-content-center align-items-center d-flex"
+                        style={{
+                          width: 500,
+                          height: 400,
+                          border: "2px solid black",
+                          opacity: "95%",
+                        }}
+                      >
+                        <p class="card-text text-center text-dark mx-5">
+                          Me and my friends really appreciate the fair price on
+                          your 6-person tent. We had an amazing weekend thanks
+                          to you!
+                        </p>
+                        <img
+                          class="card-img-top mt-3"
+                          style={{
+                            width: 150,
+                            height: 150,
+                            objectFit: "cover",
+                            objectPosition: "30%",
+                            border: "2px solid black",
+                            borderRadius: "200px",
+                          }}
+                          src={Selfie3}
+                          alt="Card cap"
+                        />
+                        <p className="text-dark mt-2 text-align-center">
+                          CampingLyfe
+                        </p>
+                      </Card>
+                    </Stack>
+                  </Carousel.Item>
+
+                  <Carousel.Item>
+                    <Stack
+                      direction="horizontal"
+                      className="justify-content-center align-items-center d-flex"
+                      gap={1}
+                    >
+                      <Card
+                        className="bg-light text-light justify-content-center align-items-center d-flex"
+                        style={{
+                          width: 500,
+                          height: 400,
+                          border: "2px solid black",
+                          opacity: "95%",
+                        }}
+                      >
+                        <p class="card-text text-center text-dark mx-5">
+                          That dirt Bike is good and I had a great time riding
+                          around with my friends & family!
+                        </p>
+                        <img
+                          class="card-img-top mt-3"
+                          style={{
+                            width: 150,
+                            height: 150,
+                            objectFit: "cover",
+                            objectPosition: "30%",
+                            border: "2px solid black",
+                            borderRadius: "200px",
+                          }}
+                          src={Selfie4}
+                          alt="Card cap"
+                        />
+                        <p className="text-dark mt-2 text-align-center">
+                          TestGuy
+                        </p>
+                      </Card>
+                    </Stack>
+                  </Carousel.Item>
+
+                  <Carousel.Item>
+                    <Stack
+                      direction="horizontal"
+                      className="justify-content-center align-items-center d-flex"
+                      gap={1}
+                    >
+                      <Card
+                        className="bg-light text-light justify-content-center align-items-center d-flex"
+                        style={{
+                          width: 500,
+                          height: 400,
+                          border: "2px solid black",
+                          opacity: "95%",
+                        }}
+                      >
+                        <p class="card-text text-center text-dark mx-5">
+                          The kids and I really appreciate you renting out your
+                          kayak for labor day weekend! We had a blast on the
+                          lake and cannot wait to do it again!
+                        </p>
+                        <img
+                          class="card-img-top mt-3"
+                          style={{
+                            width: 150,
+                            height: 150,
+                            objectFit: "cover",
+                            border: "2px solid black",
+                            borderRadius: "200px",
+                          }}
+                          src={Selfie5}
+                          alt="Card cap"
+                        />
+                        <p className="text-dark mt-2 text-align-center">
+                          MommaMakingMemories
+                        </p>
+                      </Card>
+                    </Stack>
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+            </div>
             <h3 className="featureHeader">All Available Items</h3>
 
             <div className="listingContainer mt-4">
