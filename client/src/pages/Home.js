@@ -297,8 +297,8 @@ const Home = () => {
                                 <Button
                                   style={{
                                     position: "absolute",
-                                    left: 10,
-                                    bottom: 10,
+                                    left: 35,
+                                    bottom: 15,
                                     border: "none",
                                   }}
                                   variant="primary"
