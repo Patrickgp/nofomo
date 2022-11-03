@@ -48,3 +48,26 @@ Email me: patrickgpoopathi@gmail.com
 # Test
 
 N/A
+
+# Screenshots
+
+NOFOMO Landing Page
+<img width="1512" alt="NOFOMO" src="https://user-images.githubusercontent.com/86730331/199636121-52248a44-fa2e-4809-893d-853b7000de97.png">
+
+Login/Sign up Modal
+<img width="1512" alt="Screen Shot 2022-11-02 at 6 43 09 PM" src="https://user-images.githubusercontent.com/86730331/199636165-1bed9546-d891-4498-918e-2687f59792b1.png">
+
+User Dashboard
+<img width="1512" alt="Screen Shot 2022-11-02 at 6 43 29 PM" src="https://user-images.githubusercontent.com/86730331/199636250-1007807f-da68-481e-9bc0-82c151745d9d.png">
+
+Item Post/Upload
+<img width="1512" alt="Screen Shot 2022-11-02 at 6 44 02 PM" src="https://user-images.githubusercontent.com/86730331/199636286-c409b48d-a7a3-476f-80cf-dd5fda9d2173.png">
+
+Stripe.js Payment Screen
+<img width="1512" alt="Screen Shot 2022-11-02 at 6 44 20 PM" src="https://user-images.githubusercontent.com/86730331/199636323-3715dc33-012d-44e5-8366-2ef30c9d783f.png">
+
+Payment Successful Screen
+<img width="1512" alt="Screen Shot 2022-11-02 at 6 44 32 PM" src="https://user-images.githubusercontent.com/86730331/199636361-66f572df-15c8-41b7-8631-9a10edea5dab.png">
+
+
+
