@@ -39,13 +39,10 @@ export default function PaymentForm() {
     if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await axios.post(
-          "https://shrouded-eyrie-44498.herokuapp.com/payment",
-          {
-            amount: savedPrice,
-            id,
-          }
-        );
+        const response = await axios.post("https://nofomo.vercel.app/payment", {
+          amount: savedPrice,
+          id,
+        });
 
         if (response.data.success) {
           console.log("Successful Payment");

@@ -1,4 +1,4 @@
-export const url = "https://shrouded-eyrie-44498.herokuapp.com/api";
+export const url = "https://nofomo.vercel.app/api";
 
 export const setHeaders = () => {
   const headers = {

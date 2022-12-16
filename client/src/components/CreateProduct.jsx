@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { productsCreate } from "../slices/productsSlice";
 
@@ -10,7 +9,6 @@ import { QUERY_ME } from "../utils/queries";
 const CreateProduct = () => {
   const { data } = useQuery(QUERY_ME);
   const userdata = data?.me || {};
-  const navigate = useNavigate;
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
 
