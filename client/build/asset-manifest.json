@@ -1,16 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.1a0400c2.css",
-    "main.js": "/static/js/main.9bd6100f.js",
+    "main.js": "/static/js/main.375d25c5.js",
     "static/js/787.05de1809.chunk.js": "/static/js/787.05de1809.chunk.js",
+    "static/media/selfie3.jpeg": "/static/media/selfie3.33d30fe2efe9f858fe96.jpeg",
+    "static/media/selfie2.jpeg": "/static/media/selfie2.467933923627147cfd1c.jpeg",
     "static/media/ElectricBike.jpg": "/static/media/ElectricBike.f2d405c36050ccbfdd9d.jpg",
+    "static/media/selfie4.jpeg": "/static/media/selfie4.33f4899cbfddc37cd711.jpeg",
+    "static/media/selfie5.jpeg": "/static/media/selfie5.1c327d65b3546defbe49.jpeg",
+    "static/media/selfie6.jpeg": "/static/media/selfie6.69775e0b26d7c9414176.jpeg",
     "index.html": "/index.html",
     "main.1a0400c2.css.map": "/static/css/main.1a0400c2.css.map",
-    "main.9bd6100f.js.map": "/static/js/main.9bd6100f.js.map",
+    "main.375d25c5.js.map": "/static/js/main.375d25c5.js.map",
     "787.05de1809.chunk.js.map": "/static/js/787.05de1809.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a0400c2.css",
-    "static/js/main.9bd6100f.js"
+    "static/js/main.375d25c5.js"
   ]
 }
